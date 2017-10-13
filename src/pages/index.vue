@@ -12,8 +12,8 @@
       <logo />
       <h2 class="description"></ Um estúdio de desenvolvimento web de um homem só ></h2>
       <div class="links">
-        <a href="https://twitter.com/OnedevStudioweb" target="_blank" class="button button--green">Contato</a>
-        <a href="https://goo.gl/forms/Dr1JEZuMIMLAwpHM2" target="_blank" class="button button--gray">Orçamento</a>
+        <nuxt-link to="/contato" class="button button--green">Contato</nuxt-link>
+        <nuxt-link to="/orcamento" class="button button--gray">Orçamento</nuxt-link>
       </div>
     </div>
   </section>

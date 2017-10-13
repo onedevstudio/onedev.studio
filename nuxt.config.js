@@ -25,7 +25,8 @@ module.exports = {
     ],
     link: [
       { rel: 'me', href: 'nandomoreira.me@gmail.com' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700' }
     ]
   },
   loading: { color: '#3B8070' },

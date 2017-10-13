@@ -1,6 +1,14 @@
 <template>
   <section class="container">
-    <div>
+    <div itemscope itemtype="http://schema.org/Organization">
+      <span itemprop="name" class="visually-hidden">OneDev studio</span>
+      <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress" class="visually-hidden">Pinheirinho</span><br>
+        <span itemprop="addressLocality" class="visually-hidden">Curitiba</span><br>
+        <span itemprop="addressRegion" class="visually-hidden">Paraná</span>
+        <span itemprop="postalCode" class="visually-hidden">81825310</span>
+      </span>
+      <span itemprop="telephone" class="visually-hidden">+55 41 984401163</span>
       <logo />
       <h2 class="description"></ Um estúdio de desenvolvimento web de um homem só ></h2>
       <div class="links">
@@ -61,4 +69,14 @@ export default {
     &:hover
       color: #fff
       background-color: #435466
+
+.visually-hidden
+  position: absolute
+  border: 0
+  clip: rect(0,0,0,0)
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
 </style>

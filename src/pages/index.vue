@@ -1,9 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="logo">
-        <logo />
-      </h1>
+      <logo />
       <h2 class="description"></ Um estúdio de desenvolvimento web de um homem só ></h2>
       <div class="links">
         <a href="https://twitter.com/OnedevStudioweb" target="_blank" class="button button--green">Contato</a>
@@ -29,10 +27,6 @@ export default {
   justify-content: center
   align-items: center
   text-align: center
-
-.logo
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
-  font-weight: 200
 
 .description
   font-weight: 300

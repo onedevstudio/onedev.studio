@@ -23,19 +23,21 @@ module.exports = {
       // Meta for Facebook
       { property: 'og:title', content: 'OneDev studio - Um estúdio de desenvolvimento web de um homem só' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: '/share.png' },
+      { property: 'og:image', content: 'https://onedevstudio.github.io/share.png' },
       { property: 'og:description', content: 'Um estúdio de desenvolvimento web de um homem só em Curitiba Paraná, desenvolvimento JavaScript e WordPress' },
+      { property: 'og:url', content: 'https://onedevstudio.github.io/' },
       // Meta for Twitter
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@OnedevStudioweb' },
       { name: 'twitter:creator', content: '@oseunando' },
       { name: 'twitter:title', content: 'OneDev studio - Um estúdio de desenvolvimento web de um homem só' },
       { name: 'twitter:description', content: 'Um estúdio de desenvolvimento web de um homem só em Curitiba Paraná, desenvolvimento JavaScript e WordPress' },
-      { name: 'twitter:image', content: '/share.png' }
+      { name: 'twitter:image', content: 'https://onedevstudio.github.io/share.png' }
     ],
     link: [
       { rel: 'me', href: 'nandomoreira.me@gmail.com' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'canonical', href: 'https://onedevstudio.github.io/' },
       { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700' }
     ]
   },

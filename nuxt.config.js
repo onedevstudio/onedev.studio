@@ -14,7 +14,7 @@ module.exports = {
       { name: 'og:locale', content: 'pt_BR' },
       { name: 'googlebot', content: 'index,follow' },
       { name: 'robots', content: 'index,follow,noodp' },
-      { name: 'theme-color', content: '#0860a8' },
+      { name: 'theme-color', content: '#4DBA87' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@oseunando' },
       { name: 'country', content: 'Brazil' },
@@ -29,7 +29,7 @@ module.exports = {
       { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700' }
     ]
   },
-  loading: { color: '#3B8070' },
+  loading: { color: '#4DBA87' },
   build: {
     extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {

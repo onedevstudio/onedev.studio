@@ -49,7 +49,7 @@
       return {
         pageTitle: `Contato | ${this.$store.state.title}`,
         pageDescription: `Fale com a Onedev.studio | ${this.$store.state.description}`,
-        pageUrl: `${this.$store.state.baseUrl}/coantato`
+        pageUrl: `${this.$store.state.baseUrl}/contato`
       }
     },
     components: {

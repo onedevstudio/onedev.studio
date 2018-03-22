@@ -119,6 +119,6 @@ module.exports = {
     path: '/sitemap.xml',
     hostname: `${baseUrl}`,
     cacheTime: 1000 * 60 * 150,
-    generate: false
+    generate: true
   }
 }

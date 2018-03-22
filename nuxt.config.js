@@ -5,9 +5,9 @@ const debug = process.env.DEBUG === 'true'
 const isProd = process.env.NODE_ENV === 'production' && !debug
 const baseUrl = isProd ? `https://onedev.studio` : 'http://localhost:3000'
 const title = 'Onedev.studio'
-const shortDescription = 'Design, Front-end e Desenvolvimento web'
-const description = 'Um estúdio de desenvolvimento web de um homem só em Curitiba Paraná, desenvolvimento JavaScript e WordPress'
-const themeColor = '#4dba87'
+const shortDescription = 'Design, Front-end e Desenvolvimento WordPress'
+const description = `${shortDescription} em Curitiba Paraná, desenvolvimento JavaScript e WordPress`
+const themeColor = '#435466'
 const imageShare = `${baseUrl}/share.png`
 
 module.exports = {
@@ -61,7 +61,19 @@ module.exports = {
       { hid: 'canonical', rel: 'canonical', href: `${baseUrl}` }
     ]
   },
-  loading: { color: `${themeColor}` },
+  loading: {
+    color: `${themeColor}`,
+    height: `5px`
+  },
+  plugins: [
+    { src: '~/plugins/browser.js', ssr: false },
+    { src: '~/plugins/plugins.js', ssr: false }
+  ],
+  modules: [
+    ['@nuxtjs/google-analytics'],
+    '@nuxtjs/sitemap',
+    '@nuxtjs/pwa'
+  ],
   build: {
     plugins: [
       new webpack.LoaderOptionsPlugin({
@@ -94,5 +106,19 @@ module.exports = {
         })
       }
     }
+  },
+  'google-analytics': {
+    id: 'UA-116228262-1',
+    debug: {
+      enabled: !isProd,
+      track: !isProd,
+      sendHitTask: isProd
+    }
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: `${baseUrl}`,
+    cacheTime: 1000 * 60 * 150,
+    generate: false
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "onedev.studio",
-  "description": "Um estúdio de desenvolvimento web de um homem só",
+  "description": "Design, Front-end e Desenvolvimento WordPress",
   "homepage": "https://onedev.studio/",
   "version": "1.0.0",
   "private": true,
@@ -23,7 +23,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.4.0"
+    "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/pwa": "^2.0.8",
+    "@nuxtjs/sitemap": "^0.0.3",
+    "nuxt": "^1.4.0",
+    "vue-lazyload": "^1.2.2",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

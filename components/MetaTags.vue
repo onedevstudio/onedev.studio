@@ -26,7 +26,7 @@
       },
       ogType: {
         type: String,
-        default: 'profile'
+        default: 'website'
       }
     },
     computed: {
@@ -47,6 +47,9 @@
           { hid: 'og:url', property: 'og:url', content: this.url || this.baseUrl },
           { hid: 'og:image', property: 'og:image', content: this.image || this.imageShare },
           { hid: 'description', name: 'description', content: this.description || this.pageDescription },
+          { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+          { hid: 'twitter:site', name: 'twitter:site', content: '@onedevstudioweb' },
+          { hid: 'twitter:creator', name: 'twitter:creator', content: '@oseunando' },
           { hid: 'twitter:title', name: 'twitter:title', content: this.title || this.pageTitle },
           { hid: 'twitter:description', name: 'twitter:description', content: this.description || this.pageDescription },
           { hid: 'twitter:image', name: 'twitter:image', content: this.image || this.imageShare },

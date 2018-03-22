@@ -4,24 +4,22 @@ const webpack = require('webpack')
 const debug = process.env.DEBUG === 'true'
 const isProd = process.env.NODE_ENV === 'production' && !debug
 const baseUrl = isProd ? `https://onedev.studio` : 'http://localhost:3000'
-const title = 'Onedev.studio'
+const siteName = 'Onedev.studio'
 const shortDescription = 'Design, Front-end e Desenvolvimento WordPress'
 const description = `${shortDescription} em Curitiba Paraná, desenvolvimento JavaScript e WordPress`
 const themeColor = '#435466'
-const imageShare = `${baseUrl}/share.png`
 
 module.exports = {
   dev: !isProd,
   env: {
     isProd,
     baseUrl,
-    title,
+    siteName,
     shortDescription,
-    description,
-    imageShare
+    description
   },
   head: {
-    title: `${title} - ${shortDescription}`,
+    title: `${siteName} - ${shortDescription}`,
     htmlAttrs: {
       lang: 'pt-BR'
     },
@@ -37,22 +35,8 @@ module.exports = {
       { name: 'country', content: 'Brazil' },
       { name: 'revisit-after', content: '7 days' },
       { name: 'mobile-web-app-capable', content: 'yes' },
-      { name: 'application-name', content: `${title}` },
-      { name: 'generator', content: 'Visual Studio Code v1.17' },
-      // Meta for Facebook
-      { hid: 'og:title', property: 'og:title', content: `${title} - ${shortDescription}` },
-      { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:description', property: 'og:description', content: `${description}` },
-      { hid: 'og:url', property: 'og:url', content: `${baseUrl}` },
-      { hid: 'og:image', property: 'og:image', content: `${imageShare}` },
-      // Meta for Twitter
-      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-      { hid: 'twitter:site', name: 'twitter:site', content: '@onedevstudioweb' },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: '@oseunando' },
-      { hid: 'twitter:title', name: 'twitter:title', content: `${title} - ${shortDescription}` },
-      { hid: 'twitter:description', name: 'twitter:description', content: `${description}` },
-      { hid: 'twitter:image', name: 'twitter:image', content: `${imageShare}` },
-      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: `${title} - ${shortDescription}` }
+      { name: 'application-name', content: `${siteName}` },
+      { name: 'generator', content: 'Visual Studio Code v1.17' }
     ],
     link: [
       { rel: 'author', href: '/humans.txt' },

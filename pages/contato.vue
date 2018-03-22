@@ -48,7 +48,7 @@
     data () {
       return {
         pageTitle: `Contato | ${this.$store.state.title}`,
-        pageDescription: `Fale com a Onedev.studio | ${this.$store.state.description}`,
+        pageDescription: `Fale com a ${this.$store.state.siteName} | ${this.$store.state.description}`,
         pageUrl: `${this.$store.state.baseUrl}/contato`
       }
     },

@@ -2,7 +2,7 @@
   <div class="PageHero">
     <meta-tags/>
     <div class="PageHero__inner" itemscope itemtype="http://schema.org/Organization">
-      <h1 class="PageHero__title" itemprop="name" v-html="`Onedev.studio`"/>
+      <h1 class="PageHero__title" itemprop="name" v-html="$store.state.siteName"/>
       <p class="PageHero__lead">
         <span v-html="`{{ ${$store.state.shortDescription} }}`"/>
       </p>

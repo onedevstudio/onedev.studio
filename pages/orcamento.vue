@@ -10,11 +10,9 @@
       </nuxt-link>
       <span>Orçamento</span>
     </h1>
-    <no-ssr>
-      <lazy-component>
-        <g-form/>
-      </lazy-component>
-    </no-ssr>
+    <div class="container">
+      <budget-form/>
+    </div>
   </div>
 </template>
 
@@ -30,7 +28,8 @@
     },
     components: {
       MetaTags: () => import('~/components/MetaTags'),
-      GForm: () => import('~/components/GForm')
+      BudgetForm: () => import('~/components/BudgetForm')
+      // GForm: () => import('~/components/GForm')
     }
   }
 </script>

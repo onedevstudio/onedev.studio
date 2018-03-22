@@ -137,16 +137,23 @@ table
 .form
   &,
   &__group,
-  &__input
+  &__label,
+  &__field
     display block
     width 100%
+  &__label
+    margin-bottom spacingMini
+    cursor pointer
+    font-weight 700
   &__group:not(:last-child)
     margin-bottom spacingSmall
-  &__input
-    border 1px solid #fff
+  &__field
+    border 1px solid rgba(#000, .2)
     line-height 60px
-    padding 0 spacingBase
+    padding 0 spacingSmall
     background-color #fff
+  &__hidden
+    display none
 
 .flex
   display flex

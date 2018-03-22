@@ -1,21 +1,29 @@
 {
-  "name": "onedevstudio",
-  "version": "1.0.0",
+  "name": "onedev.studio",
   "description": "Um estúdio de desenvolvimento web de um homem só",
-  "author": "Fernando Moreira <nandomoreira.me@gmail.com>",
+  "homepage": "https://onedev.studio/",
+  "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nandomoreirame/onedev.studio.git"
+  },
+  "author": "Fernando Moreira <nandomoreira.me@gmail.com> (https://nandomoreira.me)",
+  "bugs": {
+    "url": "https://github.com/nandomoreirame/onedev.studio/issues"
+  },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt dev",
+    "clean": "rimraf .nuxt && rimraf dist",
     "build": "nuxt build",
     "start": "NODE_ENV=production npm run build && NODE_ENV=production nuxt start",
-    "clean": "rimraf .nuxt && rimraf dist",
     "generate": "npm run clean && NODE_ENV=production nuxt generate",
     "deploy": "npm run generate && push-dir --dir=dist --branch=master --cleanup --force",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -27,9 +35,10 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "node-sass": "^4.5.3",
     "push-dir": "^0.4.1",
     "rimraf": "^2.6.2",
-    "sass-loader": "^6.0.6"
+    "rupture": "^0.7.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   }
 }

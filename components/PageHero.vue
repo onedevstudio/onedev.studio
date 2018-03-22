@@ -4,7 +4,7 @@
     <div class="PageHero__inner" itemscope itemtype="http://schema.org/Organization">
       <h1 class="PageHero__title" itemprop="name" v-html="`Onedev.studio`"/>
       <p class="PageHero__lead">
-        <span v-html="`{{ Design, Front-end e Desenvolvimento web }}`"/>
+        <span v-html="`{{ ${$store.state.shortDescription} }}`"/>
       </p>
       <div class="PageHero__buttons">
         <nuxt-link to="/contato" class="button button--ghost">Contato</nuxt-link>

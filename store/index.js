@@ -6,6 +6,7 @@ const Store = () => {
       baseUrl: process.env.baseUrl,
       title: `${process.env.title} - ${process.env.shortDescription}`,
       description: `${process.env.description}`,
+      shortDescription: `${process.env.shortDescription}`,
       imageShare: `${process.env.imageShare}`,
       isLoading: false,
       showNavbar: false

@@ -12,14 +12,22 @@ const Store = () => {
       shortDescription: process.env.shortDescription,
       imageShare,
       isLoading: false,
-      showNavbar: false
+      showNavbar: false,
+      formData: {},
+      step: 0
     },
     mutations: {
-      toggleLoading (state) {
+      TOGGLE_LOADING (state) {
         state.isLoading = !state.isLoading
       },
-      toggleNavbar (state) {
+      TOGGLE_NAVBAR (state) {
         state.showNavbar = !state.showNavbar
+      },
+      FORWARD_STEPS (state) {
+        state.step++
+      },
+      BACKWARD_STEPS (state) {
+        state.step--
       }
     }
   })

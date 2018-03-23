@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueLazyload from 'vue-lazyload'
+import Vuelidate from 'vuelidate'
 import WebFont from 'webfontloader'
+
+Vue.use(Vuelidate)
 
 Vue.use(VueLazyload, {
   preLoad: 1.3,

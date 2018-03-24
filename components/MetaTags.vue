@@ -23,10 +23,6 @@
       image: {
         type: String,
         default: ''
-      },
-      ogType: {
-        type: String,
-        default: 'website'
       }
     },
     computed: {
@@ -41,11 +37,16 @@
       return {
         title: this.title || this.pageTitle,
         meta: [
-          { hid: 'og:type', property: 'og:type', content: this.ogType },
+          { hid: 'og:type', property: 'og:type', content: 'website' },
           { hid: 'og:title', property: 'og:title', content: this.title || this.pageTitle },
           { hid: 'og:description', property: 'og:description', content: this.description || this.pageDescription },
+          { hid: 'og:locale', property: 'og:locale', content: 'pt_BR' },
           { hid: 'og:url', property: 'og:url', content: this.url || this.baseUrl },
           { hid: 'og:image', property: 'og:image', content: this.image || this.imageShare },
+          { hid: 'og:image:type', property: 'og:image:type', content: 'image/png' },
+          { hid: 'og:image:width', property: 'og:image:width', content: '1000' },
+          { hid: 'og:image:height', property: 'og:image:height', content: '700' },
+          { hid: 'og:image:alt', property: 'og:image:alt', content: this.title || this.pageTitle },
           { hid: 'description', name: 'description', content: this.description || this.pageDescription },
           { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
           { hid: 'twitter:site', name: 'twitter:site', content: '@onedevstudioweb' },

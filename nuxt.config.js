@@ -38,16 +38,13 @@ module.exports = {
       { name: 'generator', content: 'Visual Studio Code v1.17' }
     ],
     link: [
-      { rel: 'author', href: '/humans.txt' },
+      { rel: 'author', href: `${baseUrl}/humans.txt` },
       { rel: 'me', href: 'nandomoreira.me@gmail.com' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: `${baseUrl}/favicon.ico` },
       { hid: 'canonical', rel: 'canonical', href: `${baseUrl}` }
     ]
   },
-  loading: {
-    color: `${themeColor}`,
-    height: `5px`
-  },
+  loading: false,
   plugins: [
     { src: '~/plugins/browser.js', ssr: false },
     { src: '~/plugins/plugins.js', ssr: false }
@@ -67,9 +64,9 @@ module.exports = {
             ],
             preferPathResolver: 'webpack',
             import: [
-              '~stylus/variables.styl',
-              '~stylus/mixins.styl',
-              '~stylus/placeholders.styl'
+              '~assets/stylus/variables.styl',
+              '~assets/stylus/mixins.styl',
+              '~assets/stylus/placeholders.styl'
             ]
           },
           context: '/'
@@ -77,7 +74,6 @@ module.exports = {
       })
     ],
     extend (config, { isDev, isClient }) {
-      config.resolve.alias['stylus'] = resolve(__dirname, 'stylus')
       config.devtool = 'source-map'
 
       if (isDev && isClient) {

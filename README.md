@@ -1,6 +1,6 @@
 # Onedev.studio
 
-> Design, Front-end e Desenvolvimento WordPress
+> Um estúdio de Design, Front-end e Desenvolvimento WordPress.
 
 ## Build Setup
 

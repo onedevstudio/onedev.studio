@@ -5,7 +5,7 @@ const debug = process.env.DEBUG === 'true'
 const isProd = process.env.NODE_ENV === 'production' && !debug
 const baseUrl = isProd ? `https://onedev.studio` : 'http://localhost:3000'
 const siteName = 'Onedev.studio'
-const shortDescription = 'Design, Front-end e Desenvolvimento WordPress'
+const shortDescription = 'Um estúdio de Design, Front-end e Desenvolvimento WordPress.'
 const description = `${shortDescription} em Curitiba Paraná, desenvolvimento JavaScript e WordPress`
 const themeColor = '#435466'
 

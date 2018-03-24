@@ -236,7 +236,7 @@
     methods: {
       async submitBudget () {
         if (this.isValid) {
-          await this.$axios.post(`${this.$store.baseUrl}/orcamento`, {
+          await this.$axios.post(`${this.$store.baseUrl}/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais`, {
             'form-name': 'Budget',
             'bot-field': this.bot_field,
             'budget_name': this.budget_name,

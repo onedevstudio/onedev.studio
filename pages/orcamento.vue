@@ -21,7 +21,6 @@
 
 <script>
   export default {
-    name: 'Budget',
     data () {
       return {
         pageTitle: `Orçamento | ${this.$store.state.title}`,

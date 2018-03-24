@@ -15,7 +15,6 @@
 
 <script>
   export default {
-    name: 'Error404',
     data () {
       return {
         pageTitle: `Erro 404 - Página não encontrada | ${this.$store.state.title}`,

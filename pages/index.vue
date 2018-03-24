@@ -4,7 +4,6 @@
 
 <script>
   export default {
-    name: 'Home',
     components: {
       PageHero: () => import('~/components/PageHero')
     }

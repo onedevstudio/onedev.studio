@@ -5,14 +5,6 @@
       <h1 class="Contact__title">Contato</h1>
       <ul class="Contact__social">
         <li class="Contact__social-item">
-          <nuxt-link to="/" class="arrow-back">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5fc193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-              <line x1="20" y1="12" x2="4" y2="12"/>
-              <polyline points="10 18 4 12 10 6"/>
-            </svg>
-          </nuxt-link>
-        </li>
-        <li class="Contact__social-item">
           <a href="mailto:nandomoreira.me+onedevstudio@gmail.com" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" id="entypo-email" width="46" height="46" fill="#5fc193">
               <g>
@@ -44,7 +36,6 @@
 
 <script>
   export default {
-    name: 'Contato',
     data () {
       return {
         pageTitle: `Contato | ${this.$store.state.title}`,

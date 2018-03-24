@@ -10,7 +10,7 @@ const Store = () => {
       title: `${process.env.siteName} - ${process.env.shortDescription}`,
       description: process.env.description,
       shortDescription: process.env.shortDescription,
-      imageShare,
+      imageShare: `${process.env.baseUrl}${imageShare}`,
       isLoading: false,
       showNavbar: false,
       formData: {},

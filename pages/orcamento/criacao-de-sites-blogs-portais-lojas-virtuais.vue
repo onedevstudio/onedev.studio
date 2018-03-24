@@ -1,7 +1,7 @@
 <template>
   <div class="Budget">
     <MetaTags :title="pageTitle" :description="pageDescription" :url="pageUrl"/>
-    <div class="container--small">
+    <div class="container">
       <h1 class="Budget__title">
         <span>
           <nuxt-link to="/" class="Budget__back">
@@ -11,10 +11,16 @@
             </svg>
           </nuxt-link>
           Orçamento <nuxt-link to="/">Onedev.studio</nuxt-link>
-          <small v-html="`{{ Briefing para criação de sites, blogs, portais, lojas virtuais e aplicações web }}`"/>
+          <small v-html="`Briefing para criação de sites, blogs, portais, lojas virtuais e aplicações web`"/>
         </span>
       </h1>
-      <budget-form/>
+    </div>
+    <div class="container--small">
+      <no-ssr>
+        <lazy-component>
+          <budget-form/>
+        </lazy-component>
+      </no-ssr>
     </div>
   </div>
 </template>
@@ -30,14 +36,19 @@
     },
     components: {
       MetaTags: () => import('~/components/MetaTags'),
-      BudgetForm: () => import('~/components/Budget/Form')
-      // GForm: () => import('~/components/GForm')
+      BudgetForm: () => import('~/components/BudgetForm')
     }
   }
 </script>
 
 <style lang="stylus">
+body,
 .Budget
+  background-color secondaryColor
+.Budget
+  padding-top 100px
+  .container--small
+    max-width 650px
   &__title
     font-size 2.625rem
     line-height 1
@@ -46,7 +57,7 @@
     padding spacingLarge spacingBase
     text-align center
     text-transform uppercase
-    color #435466
+    color #fff
     display flex
     width 100%
     justify-content center
@@ -71,14 +82,7 @@
     small
       display block
       text-transform none
-      color rgba(#000, .5)
+      color rgba(#fff, .65)
       font-weight 500
       font-size 1.5rem
-  &__iframe
-    position fixed
-    display block
-    z-index 50
-    width 100%
-    height calc(100vh - 80px)
-    top 80px
 </style>

@@ -19,23 +19,19 @@
 
 <style lang="stylus">
 .PageHeader
-  background-color transparent
-  position fixed
-  z-index 100
-  top 0
-  right 0
-  left 0
-  &__inner
-    margin 0
-    padding spacingSmall spacingBase
-    @extend $clearfix
-    +above(tablet)
-      padding spacingSmall spacingBig
   .PageHeader__logo
     float left
     position relative
     font-size 1.375rem
     z-index 10001
+    pointer-events all
+    background-color transparent
+    position fixed
+    z-index 100
+    top spacingSmall
+    left spacingBase
+    +above(tablet)
+      left spacingBig
     a
       color #fff
       text-decoration none

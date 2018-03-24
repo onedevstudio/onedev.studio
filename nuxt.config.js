@@ -54,6 +54,9 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/pwa'
   ],
+  router: {
+    middleware: ['redirects']
+  },
   build: {
     plugins: [
       new webpack.LoaderOptionsPlugin({

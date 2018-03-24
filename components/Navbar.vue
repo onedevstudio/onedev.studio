@@ -7,27 +7,28 @@
         <span class="Navbar__toggle-line"/>
       </span>
     </button>
-    <transition name="Navbar">
-      <ul class="Navbar__nav" v-if="$store.state.showNavbar">
-        <li class="Navbar__item" v-on:click="closeNavbar">
-          <nuxt-link to="/" class="Navbar__link">Home</nuxt-link>
-        </li>
-        <li class="Navbar__item" v-on:click="closeNavbar">
-          <nuxt-link to="/contato" class="Navbar__link">Contato</nuxt-link>
-        </li>
-        <li class="Navbar__item">
-          <small v-on:click="closeNavbar">
-            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5541984401163">+55 41 98440-1163</a>
-          </small>
-          <small v-on:click="closeNavbar">
-            <a href="https://github.com/onedevstudio">github.com/onedevstudio</a>
-          </small>
-          <small v-on:click="closeNavbar">
-            <a href="https://twitter.com/onedevstudioweb">twitter.com/onedevstudioweb</a>
-          </small>
-        </li>
-      </ul>
-    </transition>
+    <ul class="Navbar__nav" :class="{ 'Navbar__nav--open': $store.state.showNavbar }">
+      <li class="Navbar__item" v-on:click="closeNavbar">
+        <nuxt-link to="/" class="Navbar__link">Home</nuxt-link>
+      </li>
+      <li class="Navbar__item" v-on:click="closeNavbar">
+        <nuxt-link to="/contato" class="Navbar__link">Contato</nuxt-link>
+      </li>
+      <li class="Navbar__item" v-on:click="closeNavbar">
+        <nuxt-link to="/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais" class="Navbar__link">Orçamento</nuxt-link>
+      </li>
+      <li class="Navbar__item">
+        <small v-on:click="closeNavbar">
+          <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5541984401163">+55 41 98440-1163</a>
+        </small>
+        <small v-on:click="closeNavbar">
+          <a href="https://github.com/onedevstudio">github.com/onedevstudio</a>
+        </small>
+        <small v-on:click="closeNavbar">
+          <a href="https://twitter.com/onedevstudioweb">twitter.com/onedevstudioweb</a>
+        </small>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -43,7 +44,15 @@
 
 <style lang="stylus">
 .Navbar
+  position fixed
+  z-index 100
+  top spacingSmall
+  right spacingBase
+  +above(tablet)
+    right spacingBig
   &__nav
+    opacity 0
+    visibility hidden
     position fixed
     background-color darken(secondaryColor, 25%)
     top 0
@@ -61,15 +70,25 @@
     list-style none
     +above(tablet)
       padding (spacingLarge * 2) spacingLarge spacingLarge
+    &--open
+      opacity 1
+      visibility visible
+      li
+        opacity 1
+        transform translate3d(0, 0, 0)
   &__item
     padding 0 spacingBase
     transition opacity .2s linear, transform .2s linear
+    transform translate3d(50%, 0, 0)
+    opacity 0
     &:nth-child(1)
-      transition-delay .4s
+      transition-delay .2s
     &:nth-child(2)
-      transition-delay .5s
+      transition-delay .35s
     &:nth-child(3)
-      transition-delay .6s
+      transition-delay .4s
+    &:nth-child(4)
+      transition-delay .5s
     &:last-child
       padding-top spacingSmall
     small
@@ -87,8 +106,11 @@
     letter-spacing -.03em
     text-decoration none
     font-weight 400
-    padding-bottom 25px
     transition color 400ms ease
+    line-height 60px
+    display inline-block
+    padding 0
+    margin 0
   &__toggle
     background none transparent
     border none
@@ -139,15 +161,4 @@
         &:nth-child(3)
           bottom 8px
           transform rotate(-45deg)
-
-  &-enter-active,
-  &-leave-active
-    &, li
-      transition all .25s linear
-  &-enter,
-  &-leave-to
-    opacity 0
-    li
-      opacity 0
-      transform translate3d(50%, 0, 0)
 </style>

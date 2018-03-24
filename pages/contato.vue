@@ -1,7 +1,7 @@
 <template>
-  <div class="Contact">
-    <MetaTags :title="pageTitle" :description="pageDescription" :url="pageUrl"/>
+  <div class="Contact flex flex--bottom flex--full bg">
     <div>
+      <MetaTags :title="pageTitle" :description="pageDescription" :url="pageUrl"/>
       <h1 class="Contact__title">Contato</h1>
       <ul class="Contact__social">
         <li class="Contact__social-item">
@@ -51,10 +51,7 @@
 
 <style lang="stylus">
 .Contact
-  display block
-  vertical-align bottom
   padding spacingBase
-  max-width 1260px
   +above(tablet)
     padding spacingBig
   &__title

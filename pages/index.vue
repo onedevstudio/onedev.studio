@@ -1,5 +1,5 @@
 <template>
-  <div class="PageHero">
+  <div class="PageHero flex flex--bottom flex--full bg">
     <meta-tags/>
     <div class="PageHero__inner" itemscope itemtype="http://schema.org/Organization">
       <h2 class="PageHero__lead">

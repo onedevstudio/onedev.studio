@@ -1,9 +1,7 @@
 <template>
   <div>
     <PageHeader/>
-    <div class="flex flex--bottom flex--full bg">
-      <nuxt/>
-    </div>
+    <nuxt/>
   </div>
 </template>
 
@@ -129,6 +127,8 @@ table
     color #fff
     &:hover
       background-color lighten(secondaryColor, 10%)
+  &--large
+    line-height 3.75rem
 
 .visually-hidden
   position absolute
@@ -150,17 +150,17 @@ table
     width 100%
   &__fieldset
     padding spacingSmall spacingSmall spacingBase
-    border 1px solid rgba(#000, .1)
+    border none
     margin-bottom spacingLarge
     background-color #fff
-    border-radius .3125rem
-    box-shadow 0px 6px 12px 4px rgba(#000, .05)
+    border-radius 0
+    box-shadow none
     @extend $clearfix
   &__legend
     border none
     padding spacingMini spacingSmall
     background-color primaryColor
-    border-radius .3125rem
+    border-radius 0
     color #fff
     font-size 1.125rem
     position relative
@@ -195,7 +195,7 @@ table
   &__list
     list-style none
     padding 0
-    margin 0
+    margin spacingSmall 0 0
     li
       display block
       position relative
@@ -273,9 +273,34 @@ table
     input[type="checkbox"]:checked+label:after
       animation Bounce .3s
 
+    &--error
+      input[type="radio"] + label,
+      input[type="checkbox"] + label
+        color brandDanger
+      input[type="radio"] + label:before,
+      input[type="checkbox"] + label:before
+        border-color brandDanger
+
   &__alert
-    color brandDanger
+    display block
+    padding spacingMini spacingSmall
+    background-color lighten(brandDanger, 90%)
+    color darken(brandDanger, 30%)
     cursor pointer
+    font-size .875rem
+
+.form__field--error,
+.form__field--error:focus
+  border-color brandDanger
+  color brandDanger
+
+.form__list--error,
+.form__field--error,
+.form__alert
+  animation-name shakeError
+  animation-fill-mode forward
+  animation-duration .6s
+  animation-timing-function ease-in-out
 
 select.form__field
   background-image url("~/assets/images/icon-arrow.svg")
@@ -311,4 +336,22 @@ textarea.form__field
     transform scale(1)
   50%
     transform scale(.8)
+
+@keyframes shakeError
+  0%
+    transform translateX(0)
+  15%
+    transform translateX(6px)
+  30%
+    transform translateX(-6px)
+  45%
+    transform translateX(6px)
+  60%
+    transform translateX(-6px)
+  75%
+    transform translateX(6px)
+  90%
+    transform translateX(-6px)
+  100%
+    transform translateX(0)
 </style>

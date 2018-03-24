@@ -13,8 +13,10 @@ const Store = () => {
       imageShare: `${process.env.baseUrl}${imageShare}`,
       isLoading: false,
       showNavbar: false,
-      formData: {},
-      step: 0
+      alert: {
+        type: 'default',
+        message: null
+      }
     },
     mutations: {
       TOGGLE_LOADING (state) {
@@ -23,11 +25,8 @@ const Store = () => {
       TOGGLE_NAVBAR (state) {
         state.showNavbar = !state.showNavbar
       },
-      FORWARD_STEPS (state) {
-        state.step++
-      },
-      BACKWARD_STEPS (state) {
-        state.step--
+      SET_ALERT (state, payload) {
+        state.alert = payload
       }
     }
   })

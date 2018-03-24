@@ -2,7 +2,7 @@
   "name": "onedev.studio",
   "description": "Um estúdio de Design, Front-end e Desenvolvimento WordPress.",
   "homepage": "https://onedev.studio/",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
     "dev": "nuxt dev",
     "clean": "rimraf .nuxt && rimraf dist",
     "build": "nuxt build",
+    "build:analyze": "nuxt build --analyze",
     "start": "NODE_ENV=production npm run build && NODE_ENV=production nuxt start",
     "generate": "npm run clean && NODE_ENV=production nuxt generate",
     "deploy": "npm run generate && push-dir --dir=dist --branch=master --cleanup --force",

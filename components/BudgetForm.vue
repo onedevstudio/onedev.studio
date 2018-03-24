@@ -1,3 +1,4 @@
+
 <template>
   <div class="container--small">
     <form
@@ -15,25 +16,98 @@
         <alert/>
 
         <div class="form__group" v-if="!$store.state.alert.message">
-          <label class="form__label" for="name.$params.minLength.min}}</strong> letras.</label>
+          <label class="form__label" for="name">Nome completo do resposável pelo site/projeto</label>
+          <input
+            type="text"
+            class="form__field"
+            :class="{ 'form__field--error': $v.name.$error }"
+            name="name"
+            id="name"
+            @input="$v.name.$touch()"
+            v-model.trim="name"
+            placeholder="Ex.: Bruce Wayne"/>
+          <label for="name" class="form__alert" v-if="!$v.name.required && $v.name.$error">Esse campo é obrigatório.</label>
+          <label for="name" class="form__alert" v-if="!$v.name.minLength">O seu <strong>Nome</strong> deve ter pelo menos <strong>{{$v.name.$params.minLength.min}}</strong> letras.</label>
         </div>
 
         <div class="form__group" v-if="!$store.state.alert.message">
-          <label class="form__label" for="email.email">Esse campo precisa ser um <strong>Email</strong> válido.</label>
+          <label class="form__label" for="email">Endereço de Email</label>
+          <input
+            type="email"
+            class="form__field"
+            name="email"
+            id="email"
+            :class="{ 'form__field--error': $v.email.$error }"
+            @input="$v.email.$touch()"
+            v-model.trim="email"
+            placeholder="Ex.: bruce@waynetech.org"/>
+          <label for="email" class="form__alert" v-if="!$v.email.required && $v.email.$error">Esse campo é obrigatório.</label>
+          <label for="email" class="form__alert" v-if="!$v.email.email">Esse campo precisa ser um <strong>Email</strong> válido.</label>
         </div>
 
         <div class="form__group" v-if="!$store.state.alert.message">
-          <label class="form__label" for="project_name"
+          <label class="form__label" for="project_name">Qual o nome do site/projeto? <small>(opcional)</small></label>
+          <input
+            type="text"
+            class="form__field"
+            name="project_name"
+            id="project_name"
+            :class="{ 'form__field--error': $v.project_name.$error }"
+            v-model.trim="project_name"
             placeholder="Ex.: Lojinha de venda dos produtos da Wayne Tech"/>
         </div>
 
         <div class="form__group" v-if="!$store.state.alert.message">
-          <label class="form__label" for="site_address.url">Esse campo precisa ser uma <strong>URL</strong> válida.</label>
+          <label class="form__label" for="site_address">Qual o endereço atual do site? <small>(opcional)</small></label>
+          <input
+            type="text"
+            class="form__field"
+            name="site_address"
+            id="site_address"
+            :class="{ 'form__field--error': !$v.site_address.url }"
+            v-model.trim="site_address"
+            placeholder="Ex.: http://waynetech.org"/>
+          <label for="site_address" class="form__alert" v-if="!$v.site_address.url">Esse campo precisa ser uma <strong>URL</strong> válida.</label>
         </div>
 
         <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label">Quais serviços você precisa?</label>
-          <label class="form__alert" v-if="!$v.services_loja" value="E-commerce/Loja Virtual"/>
+          <label class="form__alert" v-if="!$v.services.required && $v.services.$error">A seleção dos <strong>Serviços</strong> obrigatória.</label>
+          <ul class="form__list" :class="{ 'form__list--error': $v.services.$error }">
+            <li>
+              <input
+                type="checkbox"
+                name="services[]"
+                @change="$v.services.$touch()"
+                v-model.trim="services"
+                id="services_remodelar" value="Remodelar meu site atual"/>
+              <label for="services_remodelar">Remodelar meu site atual</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="services[]"
+                @change="$v.services.$touch()"
+                v-model.trim="services"
+                id="services_hotsite" value="Hotsite/Landing page (tela única)"/>
+              <label for="services_hotsite">Hotsite/Landing page <small>(tela única)</small></label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="services[]"
+                @change="$v.services.$touch()"
+                v-model.trim="services"
+                id="services_site" value="Site Institucional"/>
+              <label for="services_site">Site Institucional</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="services[]"
+                @change="$v.services.$touch()"
+                v-model.trim="services"
+                id="services_loja" value="E-commerce/Loja Virtual"/>
               <label for="services_loja">E-commerce/Loja Virtual</label>
             </li>
             <li>
@@ -94,7 +168,17 @@
         </div>
 
         <div class="form__group" v-if="!$store.state.alert.message">
-          <label class="form__label" for="observation.$params.minLength.min}}</strong> letras.</label>
+          <label class="form__label" for="notes">Conte-nos um pouco sobre as suas necessidades</label>
+          <textarea
+            class="form__field"
+            name="notes"
+            id="notes"
+            :class="{ 'form__field--error': $v.notes.$error }"
+            @input="$v.notes.$touch()"
+            v-model.trim="notes"
+            placeholder="Sua resposta"/>
+          <label for="notes" class="form__alert" v-if="!$v.notes.required && $v.notes.$error">O seu <strong>Comentário</strong> sobre o projeto é obrigatório.</label>
+          <label for="notes" class="form__alert" v-if="!$v.notes.minLength">O seu <strong>Comentário</strong> deve ter pelo menos <strong>{{$v.notes.$params.minLength.min}}</strong> letras.</label>
         </div>
 
         <div class="form__group form__group--footer">
@@ -111,7 +195,6 @@
 
 <script>
   import { required, email, url, minLength } from 'vuelidate/lib/validators'
-
   export default {
     data () {
       return {
@@ -121,7 +204,7 @@
         'project_name': '',
         'site_address': '',
         'services': [],
-        'observation': ''
+        'notes': ''
       }
     },
     validations: {
@@ -144,7 +227,7 @@
       services: {
         required
       },
-      observation: {
+      notes: {
         required,
         minLength: minLength(5)
       }
@@ -157,19 +240,18 @@
       },
       async submitBudget () {
         if (this.isValid) {
-          const data = {
-            'form-name': 'budget',
-            'name': this.name,
-            'email': this.email,
-            'project_name': this.project_name,
-            'site_address': this.site_address,
-            'services': this.services,
-            'observation': this.observation
-          }
           await fetch(`${this.$store.state.baseUrl}/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: this.encode(data)
+            body: this.encode({
+              'form-name': 'budget',
+              'name': this.name,
+              'email': this.email,
+              'project_name': this.project_name,
+              'site_address': this.site_address,
+              'services': this.services,
+              'notes': this.notes
+            })
           })
             .then(response => {
               console.log(response.data)
@@ -185,8 +267,6 @@
                 message: 'Oops, ocorreu um erro ao enviar o formulário, aguarde alguns minutos e tente novamente.'
               })
             })
-            console.log(JSON.stringify(this.$data))
-            console.log(JSON.stringify(data))
         } else {
           this.$v.$touch()
         }
@@ -203,7 +283,7 @@
         return (!this.$v.name.$invalid &&
           !this.$v.email.$invalid &&
           !this.$v.services.$invalid &&
-          !this.$v.observation.$invalid)
+          !this.$v.notes.$invalid)
       }
     },
     components: {

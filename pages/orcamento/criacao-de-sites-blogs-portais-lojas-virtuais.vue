@@ -18,21 +18,21 @@
 
     <form name="budget" netlify netlify-honeypot="bot-field" hidden>
       <input name="bot-field"/>
-      <input type="text" name="budget_name"/>
-      <input type="email" name="budget_email"/>
-      <input type="text" name="budget_project_name"/>
-      <input type="text" name="budget_site_address"/>
-      <input type="checkbox" name="budget_services[]" value="Remodelar meu site atual"/>
-      <input type="checkbox" name="budget_services[]" value="Hotsite/Landing page (tela única)"/>
-      <input type="checkbox" name="budget_services[]" value="Site Institucional"/>
-      <input type="checkbox" name="budget_services[]" value="E-commerce/Loja Virtual"/>
-      <input type="checkbox" name="budget_services[]" value="Blog/Site de notícias"/>
-      <input type="checkbox" name="budget_services[]" value="Design (PSD, sketch) para HTML"/>
-      <input type="checkbox" name="budget_services[]" value="Design (PSD, sketch) para WordPress"/>
-      <input type="checkbox" name="budget_services[]" value="HTML para WordPress"/>
-      <input type="checkbox" name="budget_services[]" value="Consultoria Design/Desenvolvimento"/>
-      <input type="checkbox" name="budget_services[]" value="Outros serviços"/>
-      <textarea name="budget_site_obs"></textarea>
+      <input type="text" name="name"/>
+      <input type="email" name="email"/>
+      <input type="text" name="project_name"/>
+      <input type="text" name="site_address"/>
+      <input type="checkbox" name="services[]" value="Remodelar meu site atual"/>
+      <input type="checkbox" name="services[]" value="Hotsite/Landing page (tela única)"/>
+      <input type="checkbox" name="services[]" value="Site Institucional"/>
+      <input type="checkbox" name="services[]" value="E-commerce/Loja Virtual"/>
+      <input type="checkbox" name="services[]" value="Blog/Site de notícias"/>
+      <input type="checkbox" name="services[]" value="Design (PSD, sketch) para HTML"/>
+      <input type="checkbox" name="services[]" value="Design (PSD, sketch) para WordPress"/>
+      <input type="checkbox" name="services[]" value="HTML para WordPress"/>
+      <input type="checkbox" name="services[]" value="Consultoria Design/Desenvolvimento"/>
+      <input type="checkbox" name="services[]" value="Outros serviços"/>
+      <textarea name="notes"></textarea>
     </form>
 
     <no-ssr>

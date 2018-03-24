@@ -72,7 +72,7 @@
 
         <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label">Quais serviços você precisa?</label>
-          <label class="form__alert" v-if="!$v.services.required && $v.services.$error">A seleção dos <strong>Serviços</strong> obrigatória.</label>
+          <label class="form__alert" v-if="!$v.services.required && $v.services.$error">A seleção dos <strong>Serviços</strong> é obrigatória.</label>
           <ul class="form__list" :class="{ 'form__list--error': $v.services.$error }">
             <li>
               <input

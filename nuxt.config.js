@@ -1,8 +1,7 @@
-const { resolve } = require('path')
 const webpack = require('webpack')
 
-const debug = process.env.DEBUG === 'true'
-const isProd = process.env.NODE_ENV === 'production' && !debug
+const env = process.env.NODE_ENV || 'development'
+const isProd = env === 'production'
 const baseUrl = isProd ? `https://onedev.studio` : 'http://localhost:3000'
 const siteName = 'Onedev.studio'
 const shortDescription = 'Um estúdio de Design, Front-end e Desenvolvimento WordPress.'
@@ -55,14 +54,19 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
+  axios: {
+    baseURL: baseUrl
+  },
   router: {
     middleware: ['redirects']
   },
   build: {
-    vendor: [
-      'axios'
-    ],
+    publicPath: '/app/',
+    vendor: ['axios'],
     plugins: [
+      new webpack.DefinePlugin({
+        'process.VERSION': require('./package.json').version
+      }),
       new webpack.LoaderOptionsPlugin({
         options: {
           stylus: {
@@ -81,7 +85,10 @@ module.exports = {
       })
     ],
     extend (config, { isDev, isClient }) {
-      config.devtool = 'source-map'
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = 'eval-source-map'
+      }
 
       if (isDev && isClient) {
         config.module.rules.push({

@@ -1,10 +1,20 @@
 <template>
-  <nuxt/>
+  <div>
+    <PageHeader/>
+    <div class="flex flex--bottom flex--full bg">
+      <nuxt/>
+    </div>
+    <PageFooter/>
+  </div>
 </template>
 
 <script>
   export default {
-    name: 'Default'
+    name: 'Default',
+    components: {
+      PageHeader: () => import('~/components/PageHeader'),
+      PageFooter: () => import('~/components/PageFooter')
+    }
   }
 </script>
 
@@ -265,6 +275,10 @@ table
     input[type="checkbox"]:checked+label:after
       animation Bounce .3s
 
+  &__alert
+    color brandDanger
+    cursor pointer
+
 select.form__field
   background-image url("~/assets/images/icon-arrow.svg")
   background-repeat no-repeat
@@ -282,6 +296,17 @@ textarea.form__field
   &--centered
     align-items center
     justify-content center
+  &--bottom
+    display flex
+    align-items flex-end
+    justify-content flex-start
+  &--full
+    width 100%
+    height 100vh
+
+.bg
+  background darken(secondaryColor, 25%) url("~/assets/images/hero-cover.png") no-repeat 50%
+  background-size cover
 
 @keyframes Bounce
   0%, 100%

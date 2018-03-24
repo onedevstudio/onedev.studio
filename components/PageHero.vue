@@ -2,14 +2,9 @@
   <div class="PageHero">
     <meta-tags/>
     <div class="PageHero__inner" itemscope itemtype="http://schema.org/Organization">
-      <h1 class="PageHero__title" itemprop="name" v-html="$store.state.siteName"/>
-      <p class="PageHero__lead">
-        <span v-html="`{{ ${$store.state.shortDescription} }}`"/>
-      </p>
-      <div class="PageHero__buttons">
-        <nuxt-link to="/contato" class="button button--ghost">Contato</nuxt-link>
-        <nuxt-link to="/orcamento" class="button button--secondary">Orçamento</nuxt-link>
-      </div>
+      <h2 class="PageHero__lead">
+        Um estúdio de <nuxt-link to="/">Design</nuxt-link>, <nuxt-link to="/">Front-end</nuxt-link> e <nuxt-link to="/">Desenvolvimento WordPress</nuxt-link>.
+      </h2>
       <span itemprop="telephone" class="visually-hidden">+55 41 984401163</span>
       <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span itemprop="addressLocality" class="visually-hidden">Curitiba</span>
@@ -30,32 +25,30 @@
 
 <style lang="stylus">
 .PageHero
-  width 100%
-  height 100vh
+  position relative
   max-height inherit
-  background url("~/assets/images/hero-cover.png") no-repeat center center
-  background-size cover
-  display flex
-  align-items center
-  justify-content center
   &__inner
     display block
-    vertical-align middle
-  &__title
-    font-size 120px
-    line-height 1
-    color #fff
-    font-weight 900
-    margin 0
-    padding 0
-    text-align center
-    text-transform uppercase
+    vertical-align bottom
+    padding spacingBase
+    max-width 1260px
+    +above(tablet)
+      padding spacingBig
   &__lead
-    font-weight 300
-    font-size 45px
+    font-weight 700
+    font-size 30px
+    line-height 1.2
     color #fff
-    text-align center
-    text-transform uppercase
+    margin 0
+    +above(mobileLarge)
+      font-size 48px
+    +above(tablet)
+      font-size 56px
+    +above(tabletLarge)
+      font-size 78px
+    strong
+      font-weight 700
+      color primaryColor
   &__buttons
     text-align center
     .button:first-child

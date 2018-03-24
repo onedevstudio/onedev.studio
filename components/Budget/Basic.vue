@@ -28,6 +28,7 @@
         class="form__field"
         name="budget_project_name"
         id="budget_project_name"
+        @input="$v.budget_project_name.$touch()"
         v-model.trim="budget_project_name"
         placeholder="Sua resposta"/>
     </div>
@@ -38,6 +39,7 @@
         class="form__field"
         name="budget_company_performance"
         id="budget_company_performance"
+        @input="$v.budget_company_performance.$touch()"
         v-model.trim="budget_company_performance"
         placeholder="Sua resposta"/>
     </div>
@@ -47,6 +49,7 @@
       <select
         class="form__field"
         name="budget_market_time"
+        @input="$v.budget_market_time.$touch()"
         v-model.trim="budget_market_time"
         id="budget_market_time">
         <option value="">Selecione sua resposta</option>
@@ -66,6 +69,7 @@
         class="form__field"
         name="budget_services_offered"
         id="budget_services_offered"
+        @input="$v.budget_services_offered.$touch()"
         v-model.trim="budget_services_offered"
         placeholder="Sua resposta"/>
     </div>
@@ -76,10 +80,14 @@
         class="form__field"
         name="budget_site_address"
         id="budget_site_address"
+        @input="$v.budget_site_address.$touch()"
         v-model.trim="budget_site_address"
         placeholder="Sua resposta"/>
       <small>(se não tiver deixe em branco)</small>
     </div>
+
+    <pre>{{ $data }}</pre>
+    <pre>{{ $v }}</pre>
   </fieldset>
 </template>
 
@@ -105,7 +113,8 @@
       },
       budget_email: {
         required,
-        email
+        email,
+        minLength: minLength(5)
       },
       budget_project_name: {
         required,

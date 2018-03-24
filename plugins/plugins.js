@@ -2,8 +2,10 @@ import Vue from 'vue'
 import VueLazyload from 'vue-lazyload'
 import Vuelidate from 'vuelidate'
 import WebFont from 'webfontloader'
+import VueTyperPlugin from 'vue-typer'
 
 Vue.use(Vuelidate)
+Vue.use(VueTyperPlugin)
 
 Vue.use(VueLazyload, {
   preLoad: 1.3,
@@ -12,6 +14,6 @@ Vue.use(VueLazyload, {
 
 WebFont.load({
   google: {
-    families: ['Source+Sans+Pro:300,400,600,700']
+    families: ['Roboto:300,400,500,700,900']
   }
 })

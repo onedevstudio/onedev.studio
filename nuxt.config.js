@@ -51,18 +51,13 @@ module.exports = {
   modules: [
     ['@nuxtjs/google-analytics'],
     '@nuxtjs/sitemap',
-    '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
-  axios: {
-    baseURL: baseUrl
-  },
   router: {
     middleware: ['redirects']
   },
   build: {
     publicPath: '/app/',
-    vendor: ['axios'],
     plugins: [
       new webpack.DefinePlugin({
         'process.VERSION': require('./package.json').version

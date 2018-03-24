@@ -52,12 +52,16 @@ module.exports = {
   modules: [
     ['@nuxtjs/google-analytics'],
     '@nuxtjs/sitemap',
+    '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
   router: {
     middleware: ['redirects']
   },
   build: {
+    vendor: [
+      'axios'
+    ],
     plugins: [
       new webpack.LoaderOptionsPlugin({
         options: {

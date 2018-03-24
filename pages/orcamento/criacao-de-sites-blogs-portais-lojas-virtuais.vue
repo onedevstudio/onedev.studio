@@ -15,13 +15,31 @@
         </span>
       </h1>
     </div>
-    <div class="container--small">
-      <no-ssr>
-        <lazy-component>
-          <budget-form/>
-        </lazy-component>
-      </no-ssr>
-    </div>
+
+    <form name="budget" netlify netlify-honeypot="bot-field" hidden>
+      <input name="bot-field"/>
+      <input type="text" name="budget_name"/>
+      <input type="email" name="budget_email"/>
+      <input type="text" name="budget_project_name"/>
+      <input type="text" name="budget_site_address"/>
+      <input type="checkbox" name="budget_services[]" value="Remodelar meu site atual"/>
+      <input type="checkbox" name="budget_services[]" value="Hotsite/Landing page (tela única)"/>
+      <input type="checkbox" name="budget_services[]" value="Site Institucional"/>
+      <input type="checkbox" name="budget_services[]" value="E-commerce/Loja Virtual"/>
+      <input type="checkbox" name="budget_services[]" value="Blog/Site de notícias"/>
+      <input type="checkbox" name="budget_services[]" value="Design (PSD, sketch) para HTML"/>
+      <input type="checkbox" name="budget_services[]" value="Design (PSD, sketch) para WordPress"/>
+      <input type="checkbox" name="budget_services[]" value="HTML para WordPress"/>
+      <input type="checkbox" name="budget_services[]" value="Consultoria Design/Desenvolvimento"/>
+      <input type="checkbox" name="budget_services[]" value="Outros serviços"/>
+      <textarea name="budget_site_obs"></textarea>
+    </form>
+
+    <no-ssr>
+      <lazy-component>
+        <budget-form/>
+      </lazy-component>
+    </no-ssr>
   </div>
 </template>
 

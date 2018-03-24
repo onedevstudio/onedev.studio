@@ -50,4 +50,5 @@
     span
       font-weight 700
       color lighten(primaryColor, 15%)
+      text-decoration underline
 </style>

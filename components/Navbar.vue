@@ -55,27 +55,23 @@
     overflow-y scroll
     padding (spacingLarge * 2) spacingSmall spacingLarge
     z-index 1000
-    transition all .2s cubic-bezier(.55,.055,.675,.19)
+    transition all .2s linear
     transition-delay .1s
     display inline-block
     list-style none
     +above(tablet)
       padding (spacingLarge * 2) spacingLarge spacingLarge
   &__item
-    padding spacingMini spacingBase
-    transition all .2s cubic-bezier(.55,.055,.675,.19)
+    padding 0 spacingBase
+    transition opacity .2s linear, transform .2s linear
     &:nth-child(1)
-      transition-delay .1s
+      transition-delay .4s
     &:nth-child(2)
-      transition-delay .15s
+      transition-delay .5s
     &:nth-child(3)
-      transition-delay .2s
-    &:nth-child(4)
-      transition-delay .25s
-    &:nth-child(5)
-      transition-delay .3s
+      transition-delay .6s
     &:last-child
-      padding-top spacingBase
+      padding-top spacingSmall
     small
       opacity .85
       font-size 1rem
@@ -107,9 +103,6 @@
     display block
     position relative
     top -5px
-    transition color 400ms ease,
-      background-color 400ms ease,
-      border-color 400ms ease
     +above(tablet)
       top 0
     &:focus
@@ -128,11 +121,10 @@
       margin 7px 0
       line-height 1
       position absolute
-      transition transform .2s ease-in-out, opacity .2s ease-in-out
+      transition transform .12s ease-in-out, opacity .12s ease-in-out
       &:nth-child(1)
         top -2px
       &:nth-child(2)
-        // display none
         top 8px
       &:nth-child(3)
         bottom -2px
@@ -150,7 +142,8 @@
 
   &-enter-active,
   &-leave-active
-    transition all .25s linear
+    &, li
+      transition all .25s linear
   &-enter,
   &-leave-to
     opacity 0

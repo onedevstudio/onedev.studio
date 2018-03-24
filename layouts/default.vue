@@ -4,7 +4,6 @@
     <div class="flex flex--bottom flex--full bg">
       <nuxt/>
     </div>
-    <PageFooter/>
   </div>
 </template>
 
@@ -12,8 +11,7 @@
   export default {
     name: 'Default',
     components: {
-      PageHeader: () => import('~/components/PageHeader'),
-      PageFooter: () => import('~/components/PageFooter')
+      PageHeader: () => import('~/components/PageHeader')
     }
   }
 </script>

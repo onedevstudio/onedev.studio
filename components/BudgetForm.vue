@@ -14,7 +14,7 @@
 
         <alert/>
 
-        <div class="form__group">
+        <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label" for="budget_name">Nome completo do resposável pelo site/projeto</label>
           <input
             type="text"
@@ -29,7 +29,7 @@
           <label for="budget_name" class="form__alert" v-if="!$v.budget_name.minLength">O seu <strong>Nome</strong> deve ter pelo menos <strong>{{$v.budget_name.$params.minLength.min}}</strong> letras.</label>
         </div>
 
-        <div class="form__group">
+        <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label" for="budget_email">Endereço de Email</label>
           <input
             type="email"
@@ -44,7 +44,7 @@
           <label for="budget_email" class="form__alert" v-if="!$v.budget_email.email">Esse campo precisa ser um <strong>Email</strong> válido.</label>
         </div>
 
-        <div class="form__group">
+        <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label" for="budget_project_name">Qual o nome do site/projeto? <small>(opcional)</small></label>
           <input
             type="text"
@@ -56,7 +56,7 @@
             placeholder="Ex.: Lojinha de venda dos produtos da Wayne Tech"/>
         </div>
 
-        <div class="form__group">
+        <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label" for="budget_site_address">Qual o endereço atual do site? <small>(opcional)</small></label>
           <input
             type="text"
@@ -69,7 +69,7 @@
           <label for="budget_site_address" class="form__alert" v-if="!$v.budget_site_address.url">Esse campo precisa ser uma <strong>URL</strong> válida.</label>
         </div>
 
-        <div class="form__group">
+        <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label">Quais serviços você precisa?</label>
           <label class="form__alert" v-if="!$v.budget_services.required && $v.budget_services.$error">A seleção dos <strong>Serviços</strong> obrigatória.</label>
           <ul class="form__list" :class="{ 'form__list--error': $v.budget_services.$error }">
@@ -166,7 +166,7 @@
           </ul>
         </div>
 
-        <div class="form__group">
+        <div class="form__group" v-if="!$store.state.alert.message">
           <label class="form__label" for="budget_site_obs">Conte-nos um pouco sobre as suas necessidades</label>
           <textarea
             class="form__field"
@@ -181,10 +181,11 @@
         </div>
 
         <div class="form__group form__group--footer">
-          <button class="button button--primary button--large" type="submit">
+          <button class="button button--primary button--large" type="submit" v-if="!$store.state.alert.message">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"/></svg>
             Solicitar orçamento
           </button>
+          <a href="#" v-if="$store.state.alert.message" @click="$store.commit('SET_ALERT', { type: 'default', message: null })">&#10229; voltar</a>
         </div>
       </fieldset>
     </form>
@@ -232,17 +233,25 @@
       }
     },
     methods: {
+      encode (data) {
+        return Object.keys(data)
+          .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+          .join('&')
+      },
       async submitBudget () {
         if (this.isValid) {
-          await this.$axios.post(`/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais`, {
-            'form-name': 'budget',
-            'bot-field': this.bot_field,
-            'budget_name': this.budget_name,
-            'budget_email': this.budget_email,
-            'budget_project_name': this.budget_project_name,
-            'budget_site_address': this.budget_site_address,
-            'budget_services': this.budget_services,
-            'budget_site_obs': this.budget_site_obs
+          await fetch(`${this.$store.state.baseUrl}/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: this.encode({
+              'form-name': 'budget',
+              'budget_name': this.budget_name,
+              'budget_email': this.budget_email,
+              'budget_project_name': this.budget_project_name,
+              'budget_site_address': this.budget_site_address,
+              'budget_services': this.budget_services,
+              'budget_site_obs': this.budget_site_obs
+            })
           })
             .then(response => {
               console.log(response.data)
@@ -250,12 +259,6 @@
                 type: 'success',
                 message: 'Formulário enviado com sucesso, aguarde o retorno de nossa equipe.'
               })
-              this.budget_name = null
-              this.budget_email = null
-              this.budget_project_name = null
-              this.budget_site_address = null
-              this.budget_services = []
-              this.budget_site_obs = null
             })
             .catch(err => {
               console.error(err)
@@ -264,6 +267,37 @@
                 message: 'Oops, ocorreu um erro ao enviar o formulário, aguarde alguns minutos e tente novamente.'
               })
             })
+
+          // await this.$axios({
+          //   method: 'post',
+          //   url: '/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais',
+          //   data: {
+          //     'form-name': 'budget',
+          //     'budget_name': this.budget_name,
+          //     'budget_email': this.budget_email,
+          //     'budget_project_name': this.budget_project_name,
+          //     'budget_site_address': this.budget_site_address,
+          //     'budget_services': this.budget_services,
+          //     'budget_site_obs': this.budget_site_obs
+          //   },
+          //   headers: {
+          //     'Content-Type': 'application/x-www-form-urlencoded'
+          //   }
+          // })
+          //   .then(response => {
+          //     console.log(response.data)
+          //     this.$store.commit('SET_ALERT', {
+          //       type: 'success',
+          //       message: 'Formulário enviado com sucesso, aguarde o retorno de nossa equipe.'
+          //     })
+          //   })
+          //   .catch(err => {
+          //     console.error(err)
+          //     this.$store.commit('SET_ALERT', {
+          //       type: 'error',
+          //       message: 'Oops, ocorreu um erro ao enviar o formulário, aguarde alguns minutos e tente novamente.'
+          //     })
+          //   })
             // console.log(JSON.stringify(this.$data))
         } else {
           this.$v.$touch()

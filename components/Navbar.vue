@@ -76,6 +76,28 @@
       li
         opacity 1
         transform translate3d(0, 0, 0)
+    a
+      display inline-block
+      position relative
+      &:before,
+      &:after
+        content ''
+        display block
+        position absolute
+        width 0
+        height 2px
+        transition width .12s linear
+        bottom 0
+        background-color #fff
+      &:before
+        left 50%
+      &:after
+        right 50%
+      &:hover,
+      &:focus
+        &:before,
+        &:after
+          width 50%
   &__item
     padding 0 spacingBase
     transition opacity .2s linear, transform .2s linear
@@ -111,6 +133,7 @@
     display inline-block
     padding 0
     margin 0
+    position relative
   &__toggle
     background none transparent
     border none

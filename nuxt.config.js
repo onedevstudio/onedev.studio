@@ -4,8 +4,8 @@ const env = process.env.NODE_ENV || 'development'
 const isProd = env === 'production'
 const baseUrl = isProd ? `https://onedev.studio` : 'http://localhost:3000'
 const siteName = 'Onedev.studio'
-const shortDescription = 'Um estúdio de Design, Front-end e Desenvolvimento WordPress.'
-const description = `${shortDescription} em Curitiba Paraná, desenvolvimento JavaScript e WordPress`
+const shortDescription = 'Um estúdio de Design, Front-end e Desenvolvimento WordPress'
+const description = `${shortDescription} em Curitiba Paraná, desenvolvimento JavaScript e WordPress Curitiba`
 const themeColor = '#435466'
 
 module.exports = {
@@ -34,7 +34,7 @@ module.exports = {
       { name: 'revisit-after', content: '7 days' },
       { name: 'mobile-web-app-capable', content: 'yes' },
       { name: 'application-name', content: `${siteName}` },
-      { name: 'generator', content: 'Visual Studio Code v1.17' }
+      { name: 'generator', content: 'Visual Studio Code - Insiders' }
     ],
     link: [
       { rel: 'author', href: `${baseUrl}/humans.txt` },
@@ -50,6 +50,10 @@ module.exports = {
   ],
   modules: [
     ['@nuxtjs/google-analytics'],
+    ['@nuxtjs/component-cache', {
+      max: 10000,
+      maxAge: 1000 * 60 * 60
+    }],
     '@nuxtjs/sitemap',
     '@nuxtjs/pwa'
   ],
@@ -72,7 +76,8 @@ module.exports = {
             import: [
               '~assets/stylus/variables.styl',
               '~assets/stylus/mixins.styl',
-              '~assets/stylus/placeholders.styl'
+              '~assets/stylus/placeholders.styl',
+              '~assets/stylus/base.styl'
             ]
           },
           context: '/'

@@ -32,7 +32,7 @@
     display block
     vertical-align bottom
     padding spacingBase
-    max-width 1024px
+    max-width 64rem /* 1024/16 */
     +above(tablet)
       padding spacingBig
   &__lead
@@ -42,11 +42,11 @@
     color #fff
     margin 0
     +above(mobileLarge)
-      font-size 46px
+      font-size 42px
     +above(tablet)
-      font-size 50px
+      font-size 46px
     +above(tabletLarge)
-      font-size 58px
+      font-size 50px
     span
       font-weight 700
       color lighten(primaryColor, 15%)

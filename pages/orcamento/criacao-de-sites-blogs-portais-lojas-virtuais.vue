@@ -65,6 +65,8 @@ body,
   background-color secondaryColor
 .Budget
   padding-top 100px
+  padding-bottom 100px
+  @extend $clearfix
   .container--small
     max-width 650px
   &__title

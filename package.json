@@ -13,7 +13,7 @@
     "url": "https://github.com/nandomoreirame/onedev.studio/issues"
   },
   "scripts": {
-    "dev": "nuxt dev",
+    "dev": "DEBUG=nuxt:* nuxt dev",
     "clean": "rimraf .nuxt && rimraf dist",
     "build": "nuxt build",
     "build:analyze": "nuxt build --analyze",
@@ -28,7 +28,7 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/pwa": "^2.0.8",
     "@nuxtjs/sitemap": "^0.0.3",
-    "nuxt": "^1.4.0",
+    "nuxt": "npm:nuxt-edge",
     "vue-lazyload": "^1.2.2",
     "vuelidate": "^0.6.2",
     "webfontloader": "^1.6.28"

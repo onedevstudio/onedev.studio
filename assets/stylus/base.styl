@@ -14,7 +14,7 @@ html
 
 body
   font-family fontFamily
-  background-color #fef8f0
+  background-color secondaryColor
   line-height 1.6
   font-weight 400
   font-size 1rem
@@ -97,17 +97,20 @@ table
     background-color transparent
   &--default
     background-color darken(#fff, 10%)
+    border-color darken(#fff, 15%)
     color secondaryColor
     &:hover
       color secondaryColor
       background-color darken(#fff, 15%)
   &--primary
     background-color primaryColor
+    border-color darken(primaryColor, 5%)
     color #fff
     &:hover
       background-color darken(primaryColor, 15%)
   &--secondary
     background-color secondaryColor
+    border-color darken(secondaryColor, 5%)
     color #fff
     &:hover
       background-color lighten(secondaryColor, 10%)

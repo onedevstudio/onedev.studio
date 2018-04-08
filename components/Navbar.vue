@@ -17,6 +17,9 @@
       <li class="Navbar__item" v-on:click="closeNavbar">
         <nuxt-link to="/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais" class="Navbar__link">Orçamento</nuxt-link>
       </li>
+      <li class="Navbar__item" v-on:click="closeNavbar">
+        <nuxt-link to="/hospedagem" class="Navbar__link">Hospedagem</nuxt-link>
+      </li>
       <li class="Navbar__item">
         <small v-on:click="closeNavbar">
           <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5541984401163">+55 41 98440-1163</a>

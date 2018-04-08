@@ -57,9 +57,6 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/pwa'
   ],
-  router: {
-    middleware: ['redirects']
-  },
   build: {
     publicPath: '/app/',
     plugins: [
@@ -85,7 +82,6 @@ module.exports = {
       })
     ],
     extend (config, { isDev, isClient }) {
-      // Extend only webpack config for client-bundle
       if (isClient) {
         config.devtool = 'eval-source-map'
       }

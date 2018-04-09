@@ -77,7 +77,7 @@
       return {
         pageTitle: `Hospedagem básica | ${this.$store.state.title}`,
         pageDescription: `Hospedagem básica de sites institucionais, lojas virtuais, blogs, portais e aplicações web | ${this.$store.state.title}`,
-        pageUrl: `${this.$store.state.baseUrl}/hospedagem/hospedagem-basica-de-sites-institucionais-lojas-virtuais-blogs-portais-e-aplicacoes-web`,
+        pageUrl: `${this.$store.state.baseUrl}/hospedagem`,
         monthLink: 'http://pag.ae/bhw6vch',
         semesterLink: 'http://pag.ae/bgw6vnr',
         yearLink: 'http://pag.ae/bgw6vp8',

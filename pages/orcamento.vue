@@ -49,7 +49,7 @@
       return {
         pageTitle: `Orçamento | ${this.$store.state.title}`,
         pageDescription: `Faça o seu orçamento sem compromisso preenchendo o Briefing para criação de sites, blogs, portais, lojas virtuais e aplicações web | ${this.$store.state.title}`,
-        pageUrl: `${this.$store.state.baseUrl}/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais`
+        pageUrl: `${this.$store.state.baseUrl}/orcamento`
       }
     },
     components: {

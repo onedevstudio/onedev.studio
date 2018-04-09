@@ -15,7 +15,7 @@
         <nuxt-link to="/contato" class="Navbar__link">Contato</nuxt-link>
       </li>
       <li class="Navbar__item" v-on:click="closeNavbar">
-        <nuxt-link to="/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais" class="Navbar__link">Orçamento</nuxt-link>
+        <nuxt-link to="/orcamento" class="Navbar__link">Orçamento</nuxt-link>
       </li>
       <li class="Navbar__item" v-on:click="closeNavbar">
         <nuxt-link to="/hospedagem" class="Navbar__link">Hospedagem</nuxt-link>

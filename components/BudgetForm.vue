@@ -4,7 +4,7 @@
     <form
       @submit.prevent="submitBudget"
       name="budget"
-      action="/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais"
+      action="/orcamento"
       class="form"
       netlify-honeypot="bot-field"
       method="post"
@@ -240,7 +240,7 @@
       },
       async submitBudget () {
         if (this.isValid) {
-          await fetch(`${this.$store.state.baseUrl}/orcamento/criacao-de-sites-blogs-portais-lojas-virtuais`, {
+          await fetch(`${this.$store.state.baseUrl}/orcamento`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: this.encode({

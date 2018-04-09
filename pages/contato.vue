@@ -46,7 +46,7 @@
       return {
         pageTitle: `Contato | ${this.$store.state.title}`,
         pageDescription: `Fale com a ${this.$store.state.siteName} | ${this.$store.state.description}`,
-        pageUrl: `${this.$store.state.baseUrl}/contato/criacao-de-sites-blogs-portais-lojas-virtuais`
+        pageUrl: `${this.$store.state.baseUrl}/contato`
       }
     },
     components: {

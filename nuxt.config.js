@@ -50,12 +50,12 @@ module.exports = {
   ],
   modules: [
     ['@nuxtjs/google-analytics'],
-    ['@nuxtjs/component-cache', {
-      max: 10000,
-      maxAge: 1000 * 60 * 60
-    }],
-    '@nuxtjs/sitemap',
-    '@nuxtjs/pwa'
+    // ['@nuxtjs/component-cache', {
+    //   max: 10000,
+    //   maxAge: 1000 * 60 * 60
+    // }],
+    '@nuxtjs/sitemap'
+    // '@nuxtjs/pwa'
   ],
   build: {
     publicPath: '/app/',

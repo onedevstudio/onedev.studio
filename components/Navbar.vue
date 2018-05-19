@@ -12,13 +12,10 @@
         <nuxt-link to="/" class="Navbar__link">Home</nuxt-link>
       </li>
       <li class="Navbar__item" v-on:click="closeNavbar">
+        <a href="https://blog.onedev.studio" class="Navbar__link" target="_blank">Blog</a>
+      </li>
+      <li class="Navbar__item" v-on:click="closeNavbar">
         <nuxt-link to="/contato" class="Navbar__link">Contato</nuxt-link>
-      </li>
-      <li class="Navbar__item" v-on:click="closeNavbar">
-        <nuxt-link to="/orcamento" class="Navbar__link">Orçamento</nuxt-link>
-      </li>
-      <li class="Navbar__item" v-on:click="closeNavbar">
-        <nuxt-link to="/hospedagem" class="Navbar__link">Hospedagem</nuxt-link>
       </li>
       <li class="Navbar__item">
         <small v-on:click="closeNavbar">

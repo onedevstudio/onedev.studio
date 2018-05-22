@@ -6,6 +6,23 @@
 <html {{ HTML_ATTRS }}>
 <head>{{ HEAD }}</head>
 <body {{ BODY_ATTRS }}>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId           : '1039793909502763',
+      autoLogAppEvents: true,
+      xfbml           : true,
+      version         : 'v3.0'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/pt_BR/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 {{ APP }}
 <script>
   (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);

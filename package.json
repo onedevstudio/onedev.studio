@@ -8,6 +8,7 @@
   "scripts": {
     "pretest": "eslint .",
     "clean": "rimraf dist",
+    "generate": "npm run build",
     "build": "npm run clean && gulp build",
     "start": "npm run clean && gulp",
     "dev": "npm run clean && NODE_ENV=development gulp",

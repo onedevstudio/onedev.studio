@@ -1,0 +1,8 @@
+footer.footer
+  .container
+    small.footer__left.pull-left
+      = title + ' - Curitiba/PR'
+      =' | Version: v' + version + '. '
+    small.footer__right.pull-right
+      = 'Designed and development by '
+      a.inline-hover(href=author.site target='_blank' title='by ' + author.name)=author.name

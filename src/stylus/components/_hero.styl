@@ -1,0 +1,40 @@
+.hero
+  text-align left
+  background-color whiteColor - 5%
+  padding 7.5rem 1.875rem
+  position relative
+  overflow hidden
+  &:before
+    transform translate3d(0, 0, 0)
+    position absolute
+    content ''
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background-image url("/assets/images/hero-icons.svg")
+    background-position center
+    background-size cover
+    background-position 15%
+    opacity .045
+    z-index 1
+  &__inner
+    position relative
+    z-index 2
+  &__title
+    font-weight 900
+    font-size 3.5rem /* 56/16 */
+    line-height 1.32
+    span
+      color linkColor
+  &__lead.lead
+    font-size 1.75rem /* 28/16 */
+    margin 0
+    strong
+      color linkColor
+  small,
+  &__lead
+    opacity 0.75
+  &__button .button
+    padding .3125rem /* 5/16 */ 1.5625rem /* 25/16 */
+    margin-right 1.25rem /* 20/16 */

@@ -1,14 +1,7 @@
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  env: {
-    browser: true,
-    node: true
-  },
-  extends: 'standard',
-  plugins: [
-    'html'
-  ],
-  rules: {},
-  globals: {}
+  'extends': 'standard',
+  'globals': {
+    $: true,
+    jQuery: true
+  }
 }

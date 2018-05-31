@@ -1,0 +1,17 @@
+doctype html
+html(lang='pt-br' class='no-js')
+  head
+    block head
+      - var pageUrl = homepage + '/'
+      - var pageTitle = title + ' | Um estúdio digital focado em consultoria e desenvolvimento web'
+      - var pageDescription = description
+      - var pageKeywords = ''
+      each key in { keywords }
+        - pageKeywords =  pageKeywords + key.join(", ")
+      include ../includes/head.pug
+  body.default
+    include ../includes/header.pug
+    main
+      block content
+    include ../includes/footer.pug
+    include ../includes/scripts.pug

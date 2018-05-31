@@ -1,22 +1,14 @@
-# Onedev.studio
+![Starter Kit](https://raw.githubusercontent.com/onedevstudio/starter-kit/master/src/images/share.png)
 
-> Um estúdio de Design, Front-end e Desenvolvimento WordPress.
+## Installation
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install # Or yarn install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
+```bash
+git clone https://github.com/onedevstudio/starter-kit.git your-project
+cd your-project/ && rm -rf .git
+yarn install # or npm install
+yarn dev # or npm run dev
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## License
+
+[MIT License](/LICENSE) © Fernando Moreira

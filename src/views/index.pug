@@ -1,0 +1,20 @@
+extends layouts/default.pug
+block content
+  main.hero
+    .hero__inner.container
+      h1.hero__title
+        ='Está procurando um parceiro de '
+        span='código'
+        ='? Conte com a '
+        span='Onedev.studio'
+        ='!'
+      p.hero__lead.lead
+        span
+          | Nós convertemos projetos em código para <strong>agências</strong> e <strong>designers</strong>. Convertemos seu design (PSD e Sketch) para <strong>HTML</strong>, e criamos e personalizamos seu tema para <strong>WordPress</strong>.
+      div.hero__button
+        a.button.button--primary(href='/contato')
+          | Vamos conversar!
+        span
+          ='Veja '
+          a.inline-hover(href="#")='meus últimos trabalhos'
+          =' abaixo. 👇'

@@ -1,13 +1,20 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   env: {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  // extends: 'standard',
+  extends: [
+    '@nuxtjs',
+    'standard',
+    // 'plugin:prettier/recommended'
+  ],
   plugins: [
-    'html'
+    'prettier'
   ],
   rules: {},
   globals: {}

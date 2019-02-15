@@ -1,10 +1,8 @@
 const webpack = require('webpack')
-const pkg = require('./package')
+const { description, url } = require('./package')
 
 export const isProduction = process.env.NODE_ENV === 'production'
-export const baseUrl = isProduction
-  ? 'http://onedev.studio'
-  : 'http://localhost:3000'
+export const baseUrl = isProduction ? url : 'http://localhost:3000'
 
 module.exports = {
   mode: 'universal',
@@ -17,7 +15,7 @@ module.exports = {
     title: `Onedev.studio`,
     meta: [
       { charset: 'utf-8' },
-      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'description', name: 'description', content: description },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'og:locale', content: 'pt_BR' },

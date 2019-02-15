@@ -1,9 +1,14 @@
 {
   "name": "onedevstudio",
   "version": "1.0.0",
+  "url": "https://onedev.studio",
   "description": "Um estúdio de desenvolvimento web de um homem só",
   "author": "Fernando Moreira",
+  "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "dev": "NODE_ENV=development nuxt",
     "build": "NODE_ENV=production nuxt build",

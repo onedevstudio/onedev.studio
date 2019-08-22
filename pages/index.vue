@@ -3,7 +3,7 @@
     <div class="Hero__inner">
       <c-logo />
       <h1 class="Hero__title" v-text="`Onedev.studio`" />
-      <h2 class="Hero__subtitle" v-text="`{ Um estúdio de desenvolvimento web de um homem só }`" />
+      <h2 class="Hero__subtitle" v-text="`{{ We coding digital products with creative technologies }}`" />
       <nav class="Hero__links">
         <a href="https://nandomoreira.me/portfolio" target="_blank" class="button button--green">
           <span>Projetos</span>

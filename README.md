@@ -1,6 +1,6 @@
 # onedevstudio
 
-> Um estúdio de desenvolvimento web de um homem só
+> We build digital products with creative technologies
 
 ## Build Setup
 

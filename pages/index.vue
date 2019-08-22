@@ -5,23 +5,6 @@
       <h1 class="Hero__title" v-text="`Onedev.studio`" />
       <h2 class="Hero__subtitle" v-text="`{{ We coding digital products with creative technologies }}`" />
       <nav class="Hero__links">
-        <a href="https://nandomoreira.me/portfolio" target="_blank" class="button button--green">
-          <span>Projetos</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-external-link"
-          >
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
-          </svg>
-        </a>
         <a href="https://github.com/onedevstudio" target="_blank" class="button button--grey">
           <span>GitHub</span>
           <svg

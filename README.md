@@ -1,6 +1,6 @@
 # onedevstudio
 
-> We build digital products with creative technologies
+> {{ we coding digital products with creative technologies }}
 
 ## Build Setup
 

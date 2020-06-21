@@ -3,6 +3,13 @@ import App from 'next/app';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
+const SEO = {
+  url: process?.env?.BASE_URL,
+  title: process?.env?.title || 'Onedev.studio',
+  description: process?.env?.description,
+  image: `${process?.env?.BASE_URL}/share.png`,
+};
+
 const GlobalStyle = createGlobalStyle`
   html,
   body,
@@ -105,7 +112,7 @@ function OnedevApp({ Component, pageProps }) {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) jssStyles?.parentNode?.removeChild(jssStyles);
 
-    if (process?.env?.NODE_ENV !== 'development' && 'serviceWorker' in navigator) {
+    if (process?.env?.IS_PROD && 'serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/workbox/sw.js')
         .then((registration) => {
@@ -121,7 +128,28 @@ function OnedevApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
-        <title>Onedev.studio</title>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+        />
+        <title>{SEO.title}</title>
+        <meta name="description" content={SEO.description} />
+        <meta name="theme-color" content="#434546" />
+        <meta property="og:url" content={`${SEO.url}/`} />
+        <meta property="og:title" content={SEO.title} />
+        <meta property="og:description" content={SEO.description} />
+        <meta property="og:image" content={`${SEO.image}`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:site" content={`${SEO.url}/`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${SEO.image}`} />
+        <link rel="index" href={`${SEO.url}/`} />
+        <link rel="dns-prefetch" href={`${SEO.url}/`} />
+        <link rel="preconnect" href={`${SEO.url}/`} />
+        <link rel="prefetch" href={`${SEO.url}/`} />
+        <link rel="prerender" href={`${SEO.url}/`} />
       </Head>
       <GlobalStyle />
       <Component {...pageProps} />

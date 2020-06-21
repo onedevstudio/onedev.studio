@@ -1,8 +1,13 @@
 {
   "name": "onedevstudio",
+  "title": "Onedev.studio",
   "description": "We coding digital products with creative technologies",
+  "home": "https://onedev.studio",
   "version": "1.0.0",
-  "author": "Fernando Moreira",
+  "author": {
+    "name": "Fernando Moreira",
+    "email": "nandomoreira.me@gmail.com"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {

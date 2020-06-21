@@ -3,7 +3,100 @@ import App from 'next/app';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle``;
+const GlobalStyle = createGlobalStyle`
+  html,
+  body,
+  p,
+  ol,
+  ul,
+  li,
+  dl,
+  dt,
+  dd,
+  blockquote,
+  figure,
+  fieldset,
+  legend,
+  textarea,
+  pre,
+  iframe,
+  hr,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 100%;
+    font-weight: normal;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    margin: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  * {
+    &,
+    &:before,
+    &:after {
+      box-sizing: inherit;
+    }
+  }
+
+  img,
+  embed,
+  iframe,
+  object,
+  audio,
+  video {
+    height: auto;
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  iframe {
+    border: 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  td,
+  th {
+    padding: 0;
+    text-align: left;
+  }
+
+  body {
+    color: #424242;
+    background-color: #f2f4f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+`;
 
 // eslint-disable-next-line react/prop-types
 function OnedevApp({ Component, pageProps }) {
@@ -16,12 +109,10 @@ function OnedevApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
-        <title>Combinei.app</title>
+        <title>Onedev.studio</title>
       </Head>
-      <>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </>
+      <GlobalStyle />
+      <Component {...pageProps} />
     </React.Fragment>
   );
 }

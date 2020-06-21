@@ -1,8 +1,10 @@
 import ReactGA from 'react-ga';
 
+const UA_ID = process?.env?.UA_ID || '';
+
 export const GA = {
   init() {
-    return ReactGA.initialize(process.env.UA_ID);
+    return ReactGA.initialize(UA_ID);
   },
 
   logPageView() {

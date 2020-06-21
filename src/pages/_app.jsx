@@ -104,6 +104,18 @@ function OnedevApp({ Component, pageProps }) {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) jssStyles?.parentNode?.removeChild(jssStyles);
+
+    if (process?.env?.NODE_ENV !== 'development' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/workbox/sw.js')
+        .then((registration) => {
+          console.log('service worker registration successful');
+          console.log({ registration });
+        })
+        .catch((err) => {
+          console.warn('service worker registration failed', err.message);
+        });
+    }
   }, []);
 
   return (

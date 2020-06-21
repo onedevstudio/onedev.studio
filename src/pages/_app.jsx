@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
+import { GA } from '@src/libs';
 
 const SEO = {
-  url: process?.env?.BASE_URL,
-  title: process?.env?.title || 'Onedev.studio',
-  description: process?.env?.description,
-  image: `${process?.env?.BASE_URL}/share.png`,
+  url: process.env.BASE_URL,
+  title: process.env.title || 'Onedev.studio',
+  description: process.env.description,
+  image: `${process.env.BASE_URL}/share.png`,
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -110,9 +111,15 @@ function OnedevApp({ Component, pageProps }) {
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) jssStyles?.parentNode?.removeChild(jssStyles);
+    if (jssStyles) jssStyles.parentNode.removeChild(jssStyles);
 
-    if (process?.env?.IS_PROD && 'serviceWorker' in navigator) {
+    if (!window.GA_INITIALIZED) {
+      GA.init();
+      window.GA_INITIALIZED = true;
+    }
+    GA.logPageView();
+
+    if (process.env.IS_PROD && 'serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/workbox/sw.js')
         .then((registration) => {

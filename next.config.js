@@ -1,6 +1,6 @@
 const NextWorkboxPlugin = require('next-workbox-webpack-plugin');
 const { name, title, description, author, home } = require('./package.json');
-const IS_PROD = process.env.NODE_EV === 'production';
+const IS_PROD = process.env.NODE_ENV === 'production';
 const BASE_URL = IS_PROD ? home : 'http://localhost:3000';
 
 module.exports = {

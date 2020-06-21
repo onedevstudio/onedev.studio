@@ -1,3 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-http://onedevstudio.netlify.com/* https://onedev.studio/:splat 301!
-https://onedevstudio.netlify.com/* https://onedev.studio/:splat 301!

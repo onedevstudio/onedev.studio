@@ -1,0 +1,7 @@
+# Add files here to ignore them from prettier formatting
+
+/.next
+/.vercel
+/.vscode
+/dist
+/coverage

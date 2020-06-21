@@ -143,6 +143,7 @@ function OnedevApp({ Component, pageProps }) {
         <title>{SEO.title}</title>
         <meta name="description" content={SEO.description} />
         <meta name="theme-color" content="#434546" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SEO.url}/`} />
         <meta property="og:title" content={SEO.title} />
         <meta property="og:description" content={SEO.description} />

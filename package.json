@@ -1,6 +1,10 @@
 {
-  "name": "with-typescript-styled-components",
+  "name": "onedevstudio",
+  "description": "We coding digital products with creative technologies",
   "version": "1.0.0",
+  "author": "Fernando Moreira",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -19,6 +23,5 @@
     "@types/styled-components": "5.0.1",
     "babel-plugin-styled-components": "^1.10.0",
     "typescript": "3.5.2"
-  },
-  "license": "ISC"
+  }
 }
